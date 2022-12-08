@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "48491a87-64ae-4435-b9ee-5e1474986948",
+		"name": "Task2_PostmanCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sadio Mane\",\n    \"email\":\"mane@liverpool.com\",\n    \"password\": \"Striker123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "This request is for create new user(Register process)"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"t\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"logout"
+					]
+				},
+				"description": "This request is for create new user(Register process)"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"mane@liverpool.com\",\n    \"password\": \"Striker123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "This request is for login to User"
+			},
+			"response": []
+		},
+		{
+			"name": "News Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzA1MzUxNTMsImV4cCI6MTY3MDYyMTU1MywiZGF0YSI6eyJ1c2VySWQiOiI2MzkyNTc1OTM0ZWE1OTdhZDkxODZkN2MifX0.k0qFrIRA9w0JA--m5vWmsesArJWB7c0ZmycdbrXbKEE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"search\":\"instagram\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/news",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"news"
+					]
+				},
+				"description": "Retrive data of news\n\nPass the authorization in headers as given in this request"
+			},
+			"response": []
+		},
+		{
+			"name": "Weather Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/weather",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"weather"
+					]
+				},
+				"description": "Retrive data of weather"
+			},
+			"response": []
+		}
+	]
+}
