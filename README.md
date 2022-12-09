@@ -19,7 +19,7 @@ The step 4-6 is called as merging technique.
 **Task-2**
 First open your Terminal and clone this project from below command
 
-    command: git clone https://github.com/
+    command: git clone https://github.com/RAWATSANCHIT/WeatherNewsApp.git
 
 open that folder in any editor (like vscode)
 Once clone process is completed successFully then checkout the branch master
