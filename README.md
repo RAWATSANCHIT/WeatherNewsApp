@@ -19,16 +19,35 @@ The step 4-6 is called as merging technique.
 **Task-2**
 First open your Terminal and clone this project from below command
 
-    command: git clone https://github.com/snehallodaliya/TechAlchemy.git
+    command: git clone https://github.com/
 
-open that folder in any editor (like vscode, webstorm etc..)
+open that folder in any editor (like vscode)
 Once clone process is completed successFully then checkout the branch master
 
     command: npm i
 
-Now, after installing dependencies create one **".env"** file from **".env.test"** file (copy content from **'.env.test'** to **'.env'**)
+Now, after installing dependencies create one **".env"** and copy the given content in it.
+{
 
-Now run the command **"npm start"** or go to in **"/src"** directory and then fire command **"node index.js"** (both working..)
+PORT=5000
+
+DB_CONNECTION=mongodb
+DB_HOST=localhost
+DB_PORT=27017
+DB_DATABASE=TechAlchemy
+
+JWT_SECRET=myjwttestsecret
+JWT_ACCESS_EXPIRATION_DAYS=1
+JWT_REFRESH_EXPIRATION_DAYS=1
+
+NEWS_API_KEY=75878ca287924584b3a26eac1999534f
+WEATHER_API_KEY=09cb0f43ba0c693e210060f992a43c51
+
+
+}
+
+
+Now go to the destination folder and run command - npm start - to launch the application.
 
 **Postman documentation link** : https://www.getpostman.com/collections/2301ab99e2b4df8cf8ea
 
