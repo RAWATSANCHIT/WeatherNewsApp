@@ -102,12 +102,16 @@ const logout = async (req, res) => {
         if (!tok) {
             return res.recordNotFound();
         }
-        await Token.remove();
+        const query = { "token": tokenv };
+        Token.deleteOne(query)
+            .then(result => console.log(`Deleted ${result.deletedCount} item.`))
+            .catch(err => console.error(`Delete failed with error: ${err}`));
         return res.ok({ message: "Logout Successfully!" });
     // } catch (error) {
     //     return res.failureResponse({ data: error.message });
     // }
 };
+
 
 module.exports = {
     register,
