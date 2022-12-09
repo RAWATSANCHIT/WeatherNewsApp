@@ -61,14 +61,18 @@ const weatherData = async (req, res) => {
        
         { url += `q=London&` }
         url += `appid=${process.env.WEATHER_API_KEY}`
+        // console.log(url += `appid=${process.env.WEATHER_API_KEY}`)
+        
+        // console.log()
         let response = await axios.get(url);
+        console.log(response.data.list);
         let finalData = [];
         if (response && response.data && response.data.list && response.data.list.length) {
             response.data.list.map((e) => {
                 finalData.push({ Date: moment(new Date(e.dt_txt)).toString(), main: e.weather[0].main, temp: e.main.temp });
             })
         }
-        return res.ok({ data: { data: finalData.splice(0,5), count: 5 }, message: "Weather data fetch successfully" });
+        return res.ok({ data: { data: finalData, count: finalData.length }, message: "Weather data for next 5 days fetched successfully" });
     } catch (error) {
         if (error.name === 'ValidationError') {
             return res.validationError({ message: `Invalid Data, Validation Failed at ${error.message}` });
@@ -79,7 +83,6 @@ const weatherData = async (req, res) => {
         return res.failureResponse({ data: error.message });
     }
 };
-
 module.exports = {
     newsData,
     weatherData,
